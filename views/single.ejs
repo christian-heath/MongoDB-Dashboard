@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Kitty</title>
+</head>
+
+<body>
+        <h1 id="title">Kitten's info</h1>
+        <h4 id="nav"><a class="btn btn-success" href="/">View All kittens</a></h4>
+        <div class="table">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><%= Cats.name %></th>
+                        <td><%= Cats.age %></td>
+                        <td><%= Cats.color %></td>
+                        <td><a href="/Cats/edit/<%=Cats._id%>">Edit</a> | <a href="/Cats/delete/<%=Cats._id%>">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Edit</title>
+</head>
+
+<body>
+        <h2 id="title">Edit <%= Cats.name %></h2>
+        <div class="big_form">
+                <% JSON.stringify(messages) %> 
+                <% if(messages.update) { %>
+                    <% for (var x of messages.update) { %>
+                     <h3><%= x %></h3>
+                    <% } %>
+                <% } %>
+            <form action="/Cats/update" method="post">
+                <div class='form-group'>
+                    <label for="">Name:</label>
+                    <input type="hidden" name="id" value="<%=Cats._id%>">
+                    <input type="text" name="name" value='<%= Cats.name %>' class="form-control">
+                </div>
+                <div class='form-group'>
+                    <label for="">Age:</label>
+                    <input type="text" name="age" value="<%= Cats.age %>" class="form-control">
+                </div>
+                <div class='form-group'>
+                    <label for="">Color:</label>
+                    <input type="text" name="color" value='<%= Cats.color %>' class="form-control">
+                </div>
+                <input class='btn btn-primary' type="submit" value="Submit">
+                <h4 id="nav"><a class="btn btn-success" href="/">View All kittens</a></h4>
+            </form>
+        </div>
+</body>
+
+</html>

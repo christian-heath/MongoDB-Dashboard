@@ -1,0 +1,18 @@
+#title{
+    text-align: center;
+}
+#nav{
+    float: right;
+    margin-right: 15px;
+}
+#table{
+    margin-top: 30px;
+}
+.big_form{
+    margin: 25px;
+    padding: 15px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 8px;
+    width: 483px;
+}

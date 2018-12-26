@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>New Kitty</title>
+</head>
+
+<body>
+    <h2 id="title">Add a new kitty</h2>
+    <div class="big_form">
+            <% JSON.stringify(messages) %> 
+            <% if(messages.create) { %>
+                <% for (var x of messages.create) { %>
+                 <h3><%= x %></h3>
+                <% } %>
+            <% } %>
+        <form action="/Cats/create" method="post">
+            <div class='form-group'>
+                <label for="">Name:</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class='form-group'>
+                <label for="">Age:</label>
+                <input type="text" name="age" class="form-control">
+            </div>
+            <div class='form-group'>
+                <label for="">Color:</label>
+                <input type="text" name="color" class="form-control">
+            </div>
+            <input class='btn btn-primary' type="submit" value="Submit">
+            <h4 id="nav"><a class="btn btn-success" href="/">View All kittens</a></h4>
+        </form>
+    </div>
+</body>
+
+</html>
